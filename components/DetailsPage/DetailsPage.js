@@ -1,4 +1,6 @@
-export class DetailsPage extends HTMLElement {
+import { CustomHTMLElement } from '../../shared/utils/CustomHTMLElement.js'
+
+export class DetailsPage extends CustomHTMLElement  {
 	constructor() {
 		super()
 	}
