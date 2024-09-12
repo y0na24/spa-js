@@ -19,7 +19,8 @@ export class CartItem extends HTMLElement {
 		)}`
 		this.querySelector('a.delete-button').addEventListener(
 			'click',
-			async () => {
+			async event => {
+				event.preventDefault()
 				await STORE.removeProductFromCart(item.product.id)
 			}
 		)

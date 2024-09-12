@@ -31,7 +31,7 @@ class Store {
 	async addToCart(id) {
 		const product = await STORE.getProductById(id)
 
-		const isAlreadyInCart = STORE.cart.find(product => product.id === id)
+		const isAlreadyInCart = STORE.cart.find(product => product.product.id === id)
 
 		if (isAlreadyInCart) {
 			STORE.cart = STORE.cart.map(p =>
@@ -46,7 +46,7 @@ class Store {
 		const product = await STORE.getProductById(id)
 
 		if (product) {
-			STORE.cart = STORE.cart.filter(product => product.id !== id)
+			STORE.cart = STORE.cart.filter(product => product.product.id !== id)
 		}
 	}
 }
