@@ -11,18 +11,18 @@ export class Router {
 				event.preventDefault()
 
 				const endpoint = event.target.getAttribute('href')
-				this.#go(endpoint)
+				this.go(endpoint)
 			})
 		})
 
 		window.addEventListener('popstate', event => {
-			this.#go(event.state.route, false)
+			this.go(event.state.route, false)
 		})
 
-		this.#go(location.pathname)
+		this.go(location.pathname)
 	}
 
-	#go(route, addToHisoty = true) {
+	go(route, addToHisoty = true) {
 		console.log(`Going to ${route}`)
 
 		if (addToHisoty) {
@@ -52,7 +52,7 @@ export class Router {
 
 			default: {
 				if (route.startsWith('/product-')) {
-					pageElement = document.createElement('detail-page')
+					pageElement = document.createElement('details-page')
 					const paramId = route.substring(route.lastIndexOf('-') + 1)
 					pageElement.dataset.id = paramId
 				}

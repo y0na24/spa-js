@@ -8,7 +8,6 @@ export class MenuApi {
 	}
 
 	getMenu(requestConfig = {}) {
-		return api.get('/todos', requestConfig)
+		return api.get('/menu.json', requestConfig)
 	}
 }
-

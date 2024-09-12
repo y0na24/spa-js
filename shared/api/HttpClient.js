@@ -54,12 +54,7 @@ export class HttpClient {
 
 		const response = await fetch(url, config)
 
-		return {
-			success: response.ok,
-			status: response.status,
-			statusText: response.statusText,
-			data: await response.json(),
-		}
+		return await response.json()
 	}
 
 	get(endpoint, options) {
@@ -92,4 +87,4 @@ export class HttpClient {
 	}
 }
 
-export const api = new HttpClient('https://jsonplaceholder.typicode.com')
+export const api = new HttpClient('/data')
